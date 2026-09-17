@@ -1,0 +1,19 @@
+/* Basic CSS for the form elements */
+  body {
+    font-family: Arial, sans-serif;
+
+    /* Specify the path to your image */
+    background-image: url('ATL1.jpg'); 
+            
+    /* Prevents the image from repeating like a grid */
+    background-repeat: no-repeat; 
+            
+    /* Ensures the image stretches to cover the entire screen */
+    background-size: cover; 
+            
+    /* Centers the image on the screen */
+    background-position: center; 
+            
+    /* Keeps the background fixed in place while scrolling */
+    background-attachment: fixed; 
+  }
