@@ -16,15 +16,16 @@
       width: 100%;
       margin-bottom: 15px;
       padding: 8px;
-      background-color: transparent;
-    }
+      border-radius: 20px;
+      background-color: rgba(0,0,0,0.25);   /* slightly opaque for read-ability */
+    } 
     #contactForm button {
       padding: 10px 20px;
       background-color: blue;
       color: white;
       border: none;
       cursor: pointer;
-      border-radius: 20%;
+      border-radius: 20px;
     }
     #contactForm button:hover {
       background-color: navy;
@@ -41,8 +42,10 @@
 </ul>
 </nav>
 
+  <div id="details">
   <h1>Contact Us</h1>
-  <p>Feel free to contact us to know more about your conditions and for treatment methods.</p>
+  <p>Feel free to contact us for further assistance in your travel adventures.</p>
+  </div>
 
   <form id="contactForm">
     <div>
@@ -50,14 +53,14 @@
       <input type="text" id="name" name="name" required>
     </div>
     <div>
-      <label for="email">Email</label>
+      <label for="email" class="label">Email</label>
       <input type="email" id="email" name="email" required>
     </div>
     <div>
-      <label for="message">Message</label>
+      <label for="message" class="label">Message</label>
       <textarea id="message" name="message" rows="5" required></textarea>
     </div>
-    <button type="submit" onclick="thankyou()">Submit</button>
+    <button width=100% type="submit" onclick="thankyou()">Submit</button>
   </form>
   <script>
     function thankyou(){

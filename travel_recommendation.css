@@ -38,6 +38,8 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 60px;
+    color: white;
+    background-color: rgba(0,0,0,0.25);   /* slightly opaque for read-ability */
   }
   
   /* Basic CSS for the form elements */
@@ -74,7 +76,7 @@ nav {
     display: inline-block;
     width: 100px;
     color: white;
-    /*font-weight: bold;*/
+    font-weight: 550; /* semi bold */
   }
   
   input[type="text"],
@@ -82,6 +84,7 @@ nav {
   select {
     width: 200px;
     padding: 5px;
+    border-radius: 20px;
   }
   
   button {
@@ -90,7 +93,7 @@ nav {
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 20%;
+    border-radius: 20px;
   }
   
   button:hover {
@@ -133,5 +136,10 @@ nav {
     height: auto;      /* Keeps the image aspect ratio intact */
     display: block;    /* Removes standard inline whitespace below the image */
   }
-  
+
+  #details {
+    color: white;
+    background-color: rgba(0,0,0,0.25);   /* slightly opaque for read-ability */
+  }
+
   
