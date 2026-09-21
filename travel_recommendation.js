@@ -16,19 +16,29 @@ function addPatient() {
 	}
 }
 
-function resetForm() {
+function ClearResults() {
     document.getElementById("name").value = "";
 	document.querySelector('input[name="gender"]:checked').checked = false;
 	document.getElementById("age").value = "";
 	document.getElementById("condition").value = "";
 }
 
-function searchCondition() {
-    const input = document.getElementById('conditionInput').value.toLowerCase();
-    const resultDiv = document.getElementById('result');
+function searchLocales() {
+    const input = document.getElementById('travel_recommend_search').value.toLowerCase();
+    if (input === 'country' || input === 'countries') {
+        input = 'countries';
+        console.log("input countries");
+    } else if (input === 'beach' || input === 'beaches')
+        input = 'beaches';
+        console.log("input beaches");
+    } else if (input === 'temple' || input === 'temples') {
+        input = 'temples';
+        console.log("input temples");
+    }
+    const resultDiv = document.getElementById('srch_result');
     resultDiv.innerHTML = '';
 
-    fetch('health_analysis.json')
+    fetch('travel_recommendation_api.json')
         .then(response => response.json())
         .then(data => {
         const condition = data.conditions.find(item => item.name.toLowerCase() === input);
