@@ -1,9 +1,52 @@
-/* Basic CSS for the form elements */
+/* Basic CSS for the navigation bar */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav {
+    
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+  }
+  
+  nav ul {
+    list-style-type: none;
+    /* padding: 0; */
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color:  blue;
+    font-weight: bold;
+  }
+
+  /* CSS alignment for the team div*/
+  #team {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+  
+  /* Basic CSS for the form elements */
   body {
     font-family: Arial, sans-serif;
+    color: white;
 
     /* Specify the path to your image */
-    background-image: url('ATL1.jpg'); 
+    background-image: url('ATL.png'); 
             
     /* Prevents the image from repeating like a grid */
     background-repeat: no-repeat; 
@@ -17,3 +60,78 @@
     /* Keeps the background fixed in place while scrolling */
     background-attachment: fixed; 
   }
+
+  h1 {
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: inline-block;
+    width: 100px;
+    color: white;
+    /*font-weight: bold;*/
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  select {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  button {
+    padding: 7px 15px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 20%;
+  }
+  
+  button:hover {
+    background-color: navy;
+  }
+  
+  /* Basic CSS for the report section */
+  h2 {
+    margin: 10px;
+    font-size: 14pt;
+    color: blue;
+  }
+  
+  #report,#result {
+    padding: 10px;
+    max-width: 400px;
+    word-wrap: break-word;
+  }
+#result{
+  height: 400px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+}
+  #result img{
+    width: 200px;
+    height: 100px;
+  }
+
+  figure {
+    max-width: 80px; /* Limits the element to a maximum width of 400px */
+    width: 100%;       /* Allows it to shrink responsively on smaller screens */
+    margin: 0 auto;    /* Centers the figure inside its parent div if needed */
+  }
+  
+  figure img {
+    width: 100%;       /* Forces image to match the figure container's width */
+    height: auto;      /* Keeps the image aspect ratio intact */
+    display: block;    /* Removes standard inline whitespace below the image */
+  }
+  
+  
