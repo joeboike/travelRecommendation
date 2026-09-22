@@ -28,7 +28,7 @@ function searchLocales() {
     if (input === 'country' || input === 'countries') {
         input = 'countries';
         console.log("input countries");
-    } else if (input === 'beach' || input === 'beaches')
+    } else if (input === 'beach' || input === 'beaches') {
         input = 'beaches';
         console.log("input beaches");
     } else if (input === 'temple' || input === 'temples') {
@@ -41,9 +41,9 @@ function searchLocales() {
     fetch('travel_recommendation_api.json')
         .then(response => response.json())
         .then(data => {
-        const condition = data.conditions.find(item => item.name.toLowerCase() === input);
+        const locale = data.conditions.find(item => item.name.toLowerCase() === input);
 
-        if (condition) {
+        if (locale) {
             const symptoms = condition.symptoms.join(', ');
             const prevention = condition.prevention.join(', ');
             const treatment = condition.treatment;
