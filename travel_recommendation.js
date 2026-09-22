@@ -1,7 +1,6 @@
-const addPatientButton = document.getElementById("addPatient");
-const report = document.getElementById("report");
 const btnSearch = document.getElementById('btnSearch');
-const patients = [];
+const btnReset = document.getElementById('btnReset');
+//const patients = [];
 
 function ClearResults() {
     document.getElementById("name").value = "";
@@ -11,7 +10,7 @@ function ClearResults() {
 }
 
 function searchLocales() {
-    const input = document.getElementById('travel_recommend_search').value.toLowerCase();
+    let input = document.getElementById('travel_recommend_search').value.toLowerCase();
     if (input === 'country' || input === 'countries') {
         input = 'countries';
         console.log("input countries");
@@ -24,7 +23,7 @@ function searchLocales() {
     } else {
         alert("I don't understand that option")
     }
-    
+
     const resultDiv = document.getElementById('srch_result');
     resultDiv.innerHTML = '';
 
@@ -32,22 +31,22 @@ function searchLocales() {
         fetch('travel_recommendation_api.json')
             .then(response => response.json())
             .then(data => {
-            const locale = data.countries.find(item => cities.name.toLowerCase());
+            const locale = data.countries.forEach(country => {
+                console.log("Country: ",country.name);
+                country.cities.forEach(city => {
+                    console.log("City: ",city.name);
+                    resultDiv.innerHTML += `<p><strong>${city.name}</p></strong>`;
+                    resultDiv.innerHTML += `<img src="${city.imageUrl}">`;
+                    resultDiv.innerHTML += `<p>${city.description}</p>`;
+    
+                })
+            })
 
             if (locale) {
-                const symptoms = condition.symptoms.join(', ');
-                const prevention = condition.prevention.join(', ');
-                const treatment = condition.treatment;
-
-                resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-                resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-
-                resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-                resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-                resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
             } else {
-                resultDiv.innerHTML = 'Condition not found.';
+                resultDiv.innerHTML = 'cities not found.';
             }
+            console.log(locale)
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -58,21 +57,11 @@ function searchLocales() {
         fetch('travel_recommendation_api.json')
             .then(response => response.json())
             .then(data => {
-            const locale = data.countries.find(item => cities.name.toLowerCase());
+            const locale = data.countries.find(item => cities.name);
 
             if (locale) {
-                const symptoms = condition.symptoms.join(', ');
-                const prevention = condition.prevention.join(', ');
-                const treatment = condition.treatment;
-
-                resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-                resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-
-                resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-                resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-                resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
             } else {
-                resultDiv.innerHTML = 'Condition not found.';
+                resultDiv.innerHTML = 'beaches not found.';
             }
             })
             .catch(error => {
@@ -84,21 +73,11 @@ function searchLocales() {
         fetch('travel_recommendation_api.json')
             .then(response => response.json())
             .then(data => {
-            const locale = data.countries.find(item => cities.name.toLowerCase());
+            const locale = data.countries.find(item => cities.name);
 
             if (locale) {
-                const symptoms = condition.symptoms.join(', ');
-                const prevention = condition.prevention.join(', ');
-                const treatment = condition.treatment;
-
-                resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-                resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
-
-                resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-                resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-                resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
             } else {
-                resultDiv.innerHTML = 'Condition not found.';
+                resultDiv.innerHTML = 'Temples not found.';
             }
             })
             .catch(error => {
@@ -108,6 +87,5 @@ function searchLocales() {
     }
 }
 
-btnSearch.addEventListener('click', searchCondition);
-
-addPatientButton.addEventListener("click", addPatient);
+btnSearch.addEventListener('click', searchLocales);
+btnReset.addEventListener('click', ClearResults);
