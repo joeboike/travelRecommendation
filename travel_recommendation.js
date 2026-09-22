@@ -36,7 +36,7 @@ function searchLocales() {
                 country.cities.forEach(city => {
                     console.log("City: ",city.name);
                     resultDiv.innerHTML += `<div class="card">`;
-                    resultDiv.innerHTML += `<p><strong>${city.name}</p></strong>`;
+                    resultDiv.innerHTML += `<p><strong>${city.name}</strong></p>`;
                     resultDiv.innerHTML += `<img src="${city.imageUrl}">`;
                     resultDiv.innerHTML += `<p>${city.description}</p></div>`;
                     })
@@ -54,7 +54,7 @@ function searchLocales() {
             data.beaches.forEach(beach => {
                 console.log("Beach: ",beach.name);
                 resultDiv.innerHTML += `<div class="card">`;
-                resultDiv.innerHTML += `<p><strong>${beach.name}</p></strong>`;
+                resultDiv.innerHTML += `<p><strong>${beach.name}</strong></p>`;
                 resultDiv.innerHTML += `<img src="${beach.imageUrl}">`;
                 resultDiv.innerHTML += `<p>${beach.description}</p></div>`;
                 })
@@ -71,7 +71,7 @@ function searchLocales() {
             data.temples.forEach(temple => {
                 console.log("Temples: ", temple.name);
                 resultDiv.innerHTML += `<div class="card">`;
-                resultDiv.innerHTML += `<p><strong>${temple.name}</p></strong>`;
+                resultDiv.innerHTML += `<p><strong>${temple.name}</strong></p>`;
                 resultDiv.innerHTML += `<img src="${temple.imageUrl}">`;
                 resultDiv.innerHTML += `<p>${temple.description}</p></div>`;
                 });
