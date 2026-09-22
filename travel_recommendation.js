@@ -31,58 +31,51 @@ function searchLocales() {
         fetch('travel_recommendation_api.json')
             .then(response => response.json())
             .then(data => {
-            const locale = data.countries.forEach(country => {
+            data.countries.forEach(country => {
                 console.log("Country: ",country.name);
                 country.cities.forEach(city => {
                     console.log("City: ",city.name);
                     resultDiv.innerHTML += `<p><strong>${city.name}</p></strong>`;
                     resultDiv.innerHTML += `<img src="${city.imageUrl}">`;
                     resultDiv.innerHTML += `<p>${city.description}</p>`;
-    
+                    })
                 })
-            })
-
-            if (locale) {
-            } else {
-                resultDiv.innerHTML = 'cities not found.';
-            }
-            console.log(locale)
             })
             .catch(error => {
                 console.error('Error:', error);
-                resultDiv.innerHTML = 'An error occurred while fetching data.';
+                resultDiv.innerHTML = 'An error occurred while fetching countries.';
             });
     }
     else if (input === "beaches") {
         fetch('travel_recommendation_api.json')
             .then(response => response.json())
             .then(data => {
-            const locale = data.countries.find(item => cities.name);
-
-            if (locale) {
-            } else {
-                resultDiv.innerHTML = 'beaches not found.';
-            }
+            data.beaches.forEach(beach => {
+                console.log("Beach: ",beach.name);
+                resultDiv.innerHTML += `<p><strong>${beach.name}</p></strong>`;
+                resultDiv.innerHTML += `<img src="${beach.imageUrl}">`;
+                resultDiv.innerHTML += `<p>${beach.description}</p>`;
+                })
             })
             .catch(error => {
                 console.error('Error:', error);
-                resultDiv.innerHTML = 'An error occurred while fetching data.';
+                resultDiv.innerHTML = 'An error occurred while fetching beaches.';
             });
     }
     else if (input === "temples") {
         fetch('travel_recommendation_api.json')
             .then(response => response.json())
             .then(data => {
-            const locale = data.countries.find(item => cities.name);
-
-            if (locale) {
-            } else {
-                resultDiv.innerHTML = 'Temples not found.';
-            }
+            data.temples.forEach(temple => {
+                console.log("Temples: ", temple.name);
+                resultDiv.innerHTML += `<p><strong>${temple.name}</p></strong>`;
+                resultDiv.innerHTML += `<img src="${temple.imageUrl}">`;
+                resultDiv.innerHTML += `<p>${temple.description}</p>`;
+                });
             })
             .catch(error => {
                 console.error('Error:', error);
-                resultDiv.innerHTML = 'An error occurred while fetching data.';
+                resultDiv.innerHTML = 'An error occurred while fetching temples.';
             });
     }
 }
