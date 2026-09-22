@@ -126,8 +126,8 @@ nav {
   }
 
   figure {
-    max-width: 80px; /* Limits the element to a maximum width of 400px */
-    width: 100%;       /* Allows it to shrink responsively on smaller screens */
+    max-width: 80px;
+    width: 100%;
     margin: 0 auto;    /* Centers the figure inside its parent div if needed */
   }
   
@@ -138,8 +138,22 @@ nav {
   }
 
   #details {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
     color: white;
     background-color: rgba(0,0,0,0.25);   /* slightly opaque for read-ability */
+  }
+  #detail_info{
+    width: 60%;
+  }
+  #social {
+    width: 3%;
+  }
+  #blank {
+    width: 37%;
   }
 
   
