@@ -35,10 +35,13 @@ function searchLocales() {
                 console.log("Country: ",country.name);
                 country.cities.forEach(city => {
                     console.log("City: ",city.name);
-                    resultDiv.innerHTML += `<div class="card">`;
-                    resultDiv.innerHTML += `<p><strong>${city.name}</strong></p>`;
-                    resultDiv.innerHTML += `<img src="${city.imageUrl}">`;
-                    resultDiv.innerHTML += `<p>${city.description}</p></div>`;
+                    resultDiv.innerHTML += `
+                    <div class="card">
+                        <p><strong>${city.name}</strong></p>
+                        <img src="${city.imageUrl}">
+                        <p>${city.description}</p>
+                    </div>
+                    `;
                     })
                 })
             })
@@ -53,10 +56,13 @@ function searchLocales() {
             .then(data => {
             data.beaches.forEach(beach => {
                 console.log("Beach: ",beach.name);
-                resultDiv.innerHTML += `<div class="card">`;
-                resultDiv.innerHTML += `<p><strong>${beach.name}</strong></p>`;
-                resultDiv.innerHTML += `<img src="${beach.imageUrl}">`;
-                resultDiv.innerHTML += `<p>${beach.description}</p></div>`;
+                resultDiv.innerHTML += `
+                <div class="card">
+                    <p><strong>${beach.name}</strong></p>
+                    <img src="${beach.imageUrl}">
+                    <p>${beach.description}</p>
+                </div>
+                `;
                 })
             })
             .catch(error => {
@@ -70,10 +76,13 @@ function searchLocales() {
             .then(data => {
             data.temples.forEach(temple => {
                 console.log("Temples: ", temple.name);
-                resultDiv.innerHTML += `<div class="card">`;
-                resultDiv.innerHTML += `<p><strong>${temple.name}</strong></p>`;
-                resultDiv.innerHTML += `<img src="${temple.imageUrl}">`;
-                resultDiv.innerHTML += `<p>${temple.description}</p></div>`;
+                resultDiv.innerHTML += `
+                <div class="card">
+                    <p><strong>${temple.name}</strong></p>
+                    <img src="${temple.imageUrl}">
+                    <p>${temple.description}</p>
+                </div>
+                `;
                 });
             })
             .catch(error => {
