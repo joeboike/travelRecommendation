@@ -3,10 +3,8 @@ const btnReset = document.getElementById('btnReset');
 //const patients = [];
 
 function ClearResults() {
-    document.getElementById("name").value = "";
-	document.querySelector('input[name="gender"]:checked').checked = false;
-	document.getElementById("age").value = "";
-	document.getElementById("condition").value = "";
+    const resultDiv = document.getElementById('srch_result');
+    resultDiv.innerHTML = '';
 }
 
 function searchLocales() {

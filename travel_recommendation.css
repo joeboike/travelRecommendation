@@ -166,6 +166,6 @@ nav {
     padding: 10px;
     border-radius: 8px;
     color: blue;
-    background-color: rgba(192,192,192,0.75);   /* slightly opaque for read-ability */
+    background-color: rgba(192,192,192,0.90);   /* opaque for read-ability */
 }
   
