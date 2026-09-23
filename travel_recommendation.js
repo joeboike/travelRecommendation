@@ -23,7 +23,7 @@ function searchLocales() {
     }
 
     const resultDiv = document.getElementById('srch_result');
-    resultDiv.innerHTML = '';
+    let innerHTML = '';
 
     if (input === "countries") {
         fetch('travel_recommendation_api.json')
@@ -33,15 +33,16 @@ function searchLocales() {
                 console.log("Country: ",country.name);
                 country.cities.forEach(city => {
                     console.log("City: ",city.name);
-                    resultDiv.innerHTML += `
+                    innerHTML += `
                     <div class="card">
-                        <p><strong>${city.name}</strong></p>
                         <img src="${city.imageUrl}">
+                        <p><strong>${city.name}</strong></p>
                         <p>${city.description}</p>
                     </div>
                     `;
                     })
                 })
+                resultDiv.innerHTML = innerHTML;
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -56,8 +57,8 @@ function searchLocales() {
                 console.log("Beach: ",beach.name);
                 resultDiv.innerHTML += `
                 <div class="card">
-                    <p><strong>${beach.name}</strong></p>
                     <img src="${beach.imageUrl}">
+                    <p><strong>${beach.name}</strong></p>
                     <p>${beach.description}</p>
                 </div>
                 `;
@@ -76,8 +77,8 @@ function searchLocales() {
                 console.log("Temples: ", temple.name);
                 resultDiv.innerHTML += `
                 <div class="card">
-                    <p><strong>${temple.name}</strong></p>
                     <img src="${temple.imageUrl}">
+                    <p><strong>${temple.name}</strong></p>
                     <p>${temple.description}</p>
                 </div>
                 `;
@@ -88,6 +89,11 @@ function searchLocales() {
                 resultDiv.innerHTML = 'An error occurred while fetching temples.';
             });
     }
+
+    document.getElementById("detail_info").style.display = "none";
+    document.getElementById("search_info").style.display = "block";
+    document.getElementById("srch_result").style.display = "block";
+    //document.getElementById("card").style.display = "block";
 }
 
 btnSearch.addEventListener('click', searchLocales);
