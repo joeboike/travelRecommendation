@@ -138,15 +138,17 @@ nav {
   }
 
   #details {
-    display: flex;
+    /*display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: center;*/
+    display: grid;
+    grid-template-columns: 50px 1fr 1fr;
     align-items: center;
-    gap: 60px;
+    gap: 20px;
     color: white;
-    background-color: rgba(0,0,0,0.25);   /* slightly opaque for read-ability */
+    background-color: rgba(0,0,0,0.30);   /* slightly opaque for read-ability */
   }
-  #detail_info #search_info{
+  /*#detail_info #search_info{
     width: 60%;
   }
   #social {
@@ -154,7 +156,7 @@ nav {
   }
   #blank {
     width: 37%;
-  }
+  }*/
 
 .grid {
     display: grid;

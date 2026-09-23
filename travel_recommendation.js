@@ -22,6 +22,9 @@ function searchLocales() {
         alert("I don't understand that option")
     }
 
+    const hdrDiv = document.getElementById('detail_info');
+    hdrDiv.innerHTML='<h1>Search Results</h1>'
+
     const resultDiv = document.getElementById('srch_result');
     let innerHTML = '';
 
@@ -92,8 +95,8 @@ function searchLocales() {
             });
     }
 
-    document.getElementById("detail_info").style.display = "none";
-    document.getElementById("search_info").style.display = "block";
+    /*document.getElementById("detail_info").style.display = "none";
+    document.getElementById("search_info").style.display = "block";*/
     document.getElementById("srch_result").style.display = "grid";
 }
 
