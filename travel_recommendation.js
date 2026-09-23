@@ -5,6 +5,8 @@ const btnReset = document.getElementById('btnReset');
 function ClearResults() {
     const resultDiv = document.getElementById('srch_result');
     resultDiv.innerHTML = '';
+    const searchBox = document.getElementById("travel_recommend_search");
+    searchBox.value = "";
 }
 
 function searchLocales() {
