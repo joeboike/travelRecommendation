@@ -55,7 +55,7 @@ function searchLocales() {
             .then(data => {
             data.beaches.forEach(beach => {
                 console.log("Beach: ",beach.name);
-                resultDiv.innerHTML += `
+                innerHTML += `
                 <div class="card">
                     <img src="${beach.imageUrl}">
                     <p><strong>${beach.name}</strong></p>
@@ -63,6 +63,7 @@ function searchLocales() {
                 </div>
                 `;
                 })
+                resultDiv.innerHTML = innerHTML;
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -75,7 +76,7 @@ function searchLocales() {
             .then(data => {
             data.temples.forEach(temple => {
                 console.log("Temples: ", temple.name);
-                resultDiv.innerHTML += `
+                innerHTML += `
                 <div class="card">
                     <img src="${temple.imageUrl}">
                     <p><strong>${temple.name}</strong></p>
@@ -83,6 +84,7 @@ function searchLocales() {
                 </div>
                 `;
                 });
+                resultDiv.innerHTML = innerHTML;
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -92,8 +94,7 @@ function searchLocales() {
 
     document.getElementById("detail_info").style.display = "none";
     document.getElementById("search_info").style.display = "block";
-    document.getElementById("srch_result").style.display = "block";
-    //document.getElementById("card").style.display = "block";
+    document.getElementById("srch_result").style.display = "grid";
 }
 
 btnSearch.addEventListener('click', searchLocales);
